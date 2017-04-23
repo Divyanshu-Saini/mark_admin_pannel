@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize - Copy.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/Page2.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="tick-16x16.png">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('select').material_select();
+        $("#lec_all").click(function() {
+            $(".lec_check").prop("checked", $("#lec_all").prop("checked"))
+        })
+        $("#prac_all").click(function() {
+            $(".prac_check").prop("checked", $("#prac_all").prop("checked"))
+        })
+        $("#tut_all").click(function() {
+            $(".tut_check").prop("checked", $("#tut_all").prop("checked"))
+        })
+    });
+    </script>
+</head>
+
+<body>
+    <div class="row purple" style="margin-bottom:105px;">
+        <nav>
+            <div class="row1">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li class="hide-on-small-and-down"><a href="dashboard.html">Dashboard</a></li>
+                    <li class="hide-on-small-and-down"><a href="teachers.html">Teachers</a></li>
+                    <li class="hide-on-small-and-down"><a href="class.html">Classes</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="hi-icon-wrap hi-icon-effect-6">
+                        <i class="hi-icon hi-icon-cog"></i>
+                    </li>
+                    <li class="logout" onclick="location.href='Login.html'">Log Out</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="col l12 logo purple" style="padding-top: 10px;">
+            <img src="Tick.png" class="image" width=71px>
+            <mytitle>ADD Class</mytitle>
+            <br>&nbsp
+            <br>&nbsp
+        </div>
+    </div>
+    <div class="container my-container">
+      <form  action="class_insert.php" method="post">
+        <div class="card z-depth-2 pink-text">
+            <div class="card-content">
+                <h4 class="header">&nbsp&nbsp&nbsp&nbspAdding a Class</h4>
+                <div class="container">
+                    <form action="dashboard.html">
+                        <div class="row">
+                            <div class="input-field col l12 m12 s12">
+                                <input id="class_name" name="cl_name" type="text" class="validate">
+                                <label for="class_name">Class Name</label>
+                            </div>
+                            <div class="col l6 m6 s12 ">
+                                <select name="dept">
+                                    <option value="" disabled selected>Select Department</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Computer Technology">Computer Technology</option>
+                                    <option value="Bio Technology">Bio Technology</option>
+                                    <option value="Electronic Engineering">Electronic Engineering</option>
+
+                                </select>
+                            </div>
+                            <div class="col l6 m6 s12 ">
+                                <select name="sem">
+                                    <option value="" disabled selected>Select Semester</option>
+                                    <option value="1">Semester 1</option>
+                                    <option value="2">Semester 2</option>
+                                    <option value="3">Semester 3</option>
+                                    <option value="4">Semester 4</option>
+                                    <option value="5">Semester 5</option>
+                                    <option value="6">Semester 6</option>
+                                    <option value="7">Semester 7</option>
+                                    <option value="8">Semester 8</option>
+                                </select>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="start" name="srn" type="number" class="validate">
+                                <label for="star">Start Roll No.</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="end" name="ern" type="number" class="validate">
+                                <label for="end">End Roll No.</label>
+                            </div>
+                            <div class="input-field col l12 m12 s12">
+                                <input id="batch" name="nbatch" type="number" class="validate">
+                                <label for="batch">Batches</label>
+                            </div>
+                            <div class="input-field col l12 m12 s12">
+                                <blockquote>Add multiple students by entering range of roll no.</blockquote>
+                                <blockquote>For any expcetions enter them separated by comma</blockquote>
+                                <blockquote>Number of Batches (less than or equal to 5) / Batch size(greater than 5)</blockquote>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col l2 right">
+                                <input type="submit" value="Submit" class="btn-flat pink waves-light white-text">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </form>
+    </div>
+</body>
+
+</html>

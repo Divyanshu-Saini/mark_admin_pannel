@@ -1,0 +1,244 @@
+<?php
+header('Content-Type: text/css');
+ ?>
+body {
+    background-color: #ffffff;
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    background-image: url(../images/p7_Background.png);
+}
+
+.bg-home {
+    height: 90vh;
+    width: 50vh;
+    color: #ffffff;
+    position: relative;
+    top: 5vh;
+    box-shadow: 0 0 1.25em 0 rgba(0, 0, 0, .3);
+}
+
+.bg-home h1 {
+    font-size: 42px;
+    font-weight: 300;
+}
+
+.bg-home h3 {
+    font-weight: 200;
+}
+
+.bg-home p {
+    font-size: 1.2em;
+}
+
+.img-logo img {
+    height: 115px;
+    margin-top: 160px;
+    margin-bottom: 145px;
+}
+
+.img-upload i {
+    font-size: 115px;
+    margin-top: 160px;
+    margin-bottom: 50px;
+}
+
+.home-heading {
+    margin-top: 120px;
+}
+
+.no-account {
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    color: #adadad;
+    font-size: 0.9em!important;
+}
+
+.no-account a{
+    color: #ffffff;
+    margin-left: 5px;
+}
+.no-account a:hover {
+    color: #D667CD;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.hav-account a:hover  {
+    color: #01B9FF;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.form {
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+label {
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin: 25px 0 0px 0px;
+}
+
+input[type="text"],input[type="password"],input[type="email"] {
+    height: 50px;
+    color: #ffffff;
+    background: transparent;
+    font-size: 1.2em;
+    font-weight: 400;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid white;
+    box-shadow: none !important;
+    padding: 15px 0 15px 0;
+}
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #bdbdbd;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.btn-sign-in {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 60px;
+    width: 50%;
+    text-align: center;
+    border-radius: 0px;
+    background-color: #01B9FF;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.btn-sign-up {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 60px;
+    width: 50%;
+    text-align: center;
+    border-radius: 0px;
+    background-color: #D667CD;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.btn-sign-in:hover {
+    color: #ffffff;
+    background-color: #33C5FF;
+}
+
+.btn-sign-up:hover {
+    color: #ffffff;
+    background-color: #DD7ED5;
+}
+
+.btn-block {
+    height: 70px;
+    width: inherit;
+    position: relative;
+    margin: 50px 0 30px 0;
+    padding-left: 25px;
+    font-size: 1.1em;
+}
+.img-header{
+    position: relative;
+}
+
+.img-header img{
+    width: 100%;
+    height: 30vh;
+}
+
+.img-header h1{
+    position: absolute;
+    top: 10px;
+    color: #ffffff;
+    left: 20px;
+}
+
+.shadow{
+    box-shadow: 0 0 1.25em 0 rgba(0, 0, 0, .3);
+}
+
+.teacher-block{
+    padding: 0;
+}
+
+.period-heading{
+    background-color: #f8f8f8;
+    padding: 20px 15px;
+    font-weight: 300;
+    color: #A4A4A4;
+    text-transform: uppercase!important;
+    margin: 0px;
+    border-left: 5px solid #e0e0e0;
+}
+.heading{
+    background-color: #f8f8f8;
+    padding: 20px 15px;
+    font-weight: 300;
+    color: #A4A4A4;
+    text-transform: uppercase!important;
+    margin: 0px;
+    border-left: 5px solid #e0e0e0;
+    float: left;
+    width: 100%;
+}
+
+.period{
+    width: 50%;
+    margin: 0;
+    float:left;
+    position: relative;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid #efefef;
+    padding: 15px;
+    background-color: #ffffff;
+}
+.period:nth-child(3n+3)     { border-left: 5px solid #ff9800; }
+.period:nth-child(3n+1)		{ border-left: 5px solid #1de9b6; }
+.period:nth-child(3n+2)		{ border-left: 5px solid #b388ff; }
+
+.psubject{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.pteacher{
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+.pdetails{
+    font-size:1.2em;
+    margin-bottom: 5px;
+}
+
+.plocation{
+    margin-left: 50px;
+}
+
+i{
+    vertical-align: middle;
+}
+
+.hidden{
+    display: none !important;
+   visibility: hidden !important;
+}
+
+.btns{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}

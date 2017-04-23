@@ -1,0 +1,237 @@
+<html>
+<head>
+<title>Subjects</title>
+    <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize - Copy.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/Page2.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link rel="shortcut icon" type="image/x-icon" href="tick-16x16.png">
+    <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+        $(document).ready(function(){           
+            $('select').material_select();
+            $("#lec_all").click(function() {
+            $(".lec_check").prop("checked", $("#lec_all").prop("checked"))
+            })
+            $("#prac_all").click(function() {
+            $(".prac_check").prop("checked", $("#prac_all").prop("checked"))
+            })
+            $("#tut_all").click(function() {
+            $(".tut_check").prop("checked", $("#tut_all").prop("checked"))
+            })
+        });
+      </script>      
+</head>
+<body >
+
+<div class="row purple" style="margin-bottom:105px;">
+  <nav>
+    <div class="row1">
+      <ul>
+        <li><a href="home.html" >Home</a></li>
+        <li class="hide-on-small-and-down" ><a href="dashboard.html">Dashboard</a></li>
+        <li class="hide-on-small-and-down"><a href="teachers.html" >Teachers</a></li>
+        <li class="hide-on-small-and-down"><a href="class.html">Classes</a></li>
+      </ul>
+      <ul class="right">
+        <li class="hi-icon-wrap hi-icon-effect-6">
+          <i class="hi-icon hi-icon-cog" ></i>
+        </li>
+        <li class="logout" onclick="location.href='Login.html'">Log Out</li>
+        </ul>
+      </div>
+    </nav>
+
+  <div class="col l12 logo purple" style="padding-top: 10px;">
+    <img src="Tick.png" class = "image" width=71px ><mytitle>ADD Subjects</mytitle><br>&nbsp  <br>&nbsp      
+    </div>
+
+</div>
+
+<div class="container my-container">
+  <div class="card z-depth-2 pink-text">
+    <div class="card-content">
+      <h4 class="header">&nbsp&nbsp&nbsp&nbspAdding Subjects</h4>
+      <div class="row">
+        <form class="offset-l1 offset-m1 offset-s1 col l10 m10 s11" action="home.html">
+          <div class="row">          
+            <div class="input-field col l6 m6 s12">
+              <select>
+                <option value="" disabled selected>Select Course</option>
+                <option value="1" class="red-text">Course 1</option>
+                <option value="2">Course 2</option>
+                <option value="3">Course 3</option>
+              </select>
+              </div>       
+            <div class="input-field col l6 m6 s12">
+              <select>
+                <option value="" disabled selected>Select Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="1">Semester 4</option>
+                <option value="2">Semester 5</option>
+                <option value="3">Semester 6</option>
+                <option value="1">Semester 7</option>
+                <option value="2">Semester 8</option>
+              </select>
+              </div>
+            </div>  
+          <div class="row">
+            <div class="input-field col l2 m2 s4 offset-l5">
+              <input class="lec_check" name="lec" type="checkbox" id="lec_all" />
+              <label for="lec_all">Lecture</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut" type="radio" id="prac_all" />
+              <label for="prac_all">Practical</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut" type="radio" id="tut_all" />
+              <label for="tut_all">Tutorial</label>
+              </div>
+            </div>
+          <div class="row">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub1" type="text" class="validate">
+              <label for="sub1">Subject 1</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check" name="lec1" type="checkbox" id="lec1" />
+              <label for="lec1"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut1" type="radio" id="prac1" />
+              <label for="prac1"></label>
+              </div>
+            <div class="input-field col l2 m2 s2">
+              <input class="tut_check" name="prac_tut1" type="radio" id="tut1" />
+              <label for="tut1"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row ">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub2" type="text" class="validate">
+              <label for="sub2">Subject 2</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check"  name="lec2" type="checkbox" id="lec2" />
+              <label for="lec2"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut2" type="radio" id="prac2" />
+              <label for="prac2"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut2" type="radio" id="tut2" />
+              <label for="tut2"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row ">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub3" type="text" class="validate">
+              <label for="sub3">Subject 3</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check"  name="lec3" type="checkbox" id="lec3" />
+              <label for="lec3"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut3" type="radio" id="prac3" />
+              <label for="prac3"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut3" type="radio" id="tut3" />
+              <label for="tut3"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row ">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub4" type="text" class="validate">
+              <label for="sub4">Subject 4</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check"  name="lec4" type="checkbox" id="lec4" />
+              <label for="lec4"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut4" type="radio" id="prac4" />
+              <label for="prac4"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut4" type="radio" id="tut4" />
+              <label for="tut4"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row ">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub5" type="text" class="validate">
+              <label for="sub5">Subject 5</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check"  name="lec5" type="checkbox" id="lec5" />
+              <label for="lec5"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut5" type="radio" id="prac5" />
+              <label for="prac5"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut5" type="radio" id="tut5" />
+              <label for="tut5"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row ">
+            <div class="input-field col l5 m5 s12">
+              <input id="sub6" type="text" class="validate">
+              <label for="sub6">Subject 6</label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="lec_check"  name="lec6" type="checkbox" id="lec6" />
+              <label for="lec6"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="prac_check" name="prac_tut6" type="radio" id="prac6" />
+              <label for="prac6"></label>
+              </div>
+            <div class="input-field col l2 m2 s4">
+              <input class="tut_check" name="prac_tut6" type="radio" id="tut6" />
+              <label for="tut6"></label>
+              </div>
+            <div class="input-field col l1 m1 s2 hide-on-small-only">
+              <i class="mdi-action-delete small grey-text"></i>
+              </div>
+            </div>
+          <div class="row" >
+            <div class="col l2 right">              
+              <input type="submit" value="Submit"class="btn-flat pink white-text" >            
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Students</title>
+  <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize - Copy.css" media="screen,projection"/>
+  	<link type="text/css" rel="stylesheet" href="css/Page2.css" media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" type="image/x-icon" href="tick-16x16.png">
+  <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('.modal-trigger').leanModal();
+          $('select').material_select();
+      });
+    </script>
+    <script>
+    function appendText() {
+        var txt1 = 'te1';              // Create text with HTML
+        var txt2 = $("<p></p>").text('tex2');  // Create text with jQuery
+        $('#gen').before('<select>
+                  <option value="" disabled selected>Select Semester</option>
+                  <option value="1">Semester 1</option>
+                  <option value="2">Semester 2</option>
+                  </select>');     // Append new elements
+    }
+    </script>
+</head>
+<body>
+
+<div class="row purple" style="margin-bottom:65px;">
+  <nav>
+    <div class="row1">
+      <ul>
+        <li><a href="home.html" >Home</a></li>
+        <li class="hide-on-small-and-down" ><a href="dashboard.html">Dashboard</a></li>
+        <li class="hide-on-small-and-down"><a href="teachers.html" >Teachers</a></li>
+        <li class="hide-on-small-and-down"><a href="class.html">Classes</a></li>
+      </ul>
+      <ul class="right">
+        <li class="hi-icon-wrap hi-icon-effect-6">
+          <i class="hi-icon hi-icon-cog" ></i>
+        </li>
+        <li class="logout" onclick="location.href='sign_in.html'">Log Out</li>
+        </ul>
+      </div>
+    </nav>
+<!-- Modal Trigger -->
+<a class="btn-floating btn-flat btn-large waves-effect waves-light pink actbtnc modal-trigger" href="#modal1"><i class="mdi-content-add "></i></a>
+
+  <div class="col l12 logo purple" style="padding-top: 10px;">
+    <img src="Tick.png" class = "image" width=71px height=50px><mytitle>Students</mytitle><br>&nbsp
+    </div>
+
+</div>
+<br>
+
+ <div class="row">
+    <div class="col s12 m4 l3 offset-l1 offset-m1">
+      <div class="card teach" >
+        <div class="card-image ">
+          <img src="profile.png" height="312px">
+          <div class=""></div>
+          <span class="on-hover per">80<span style="font-size:.8em;">%</span></span>
+          <span class="on-hover bio">View Progress</span>
+          </div>
+        <div class="card-content center  grey-text">
+          <span class="card-title">Student Name</span><br>
+          <span class="" >Department</span><br>
+          <span class="on-hover right pad">60003130014</span>
+          <span class="on-hover left pad">Semester 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Modal Structure -->
+  <div id="modal1" class="modal purple white-text">
+    <div class="modal-content">
+      <h4 style="font-weight:300">Adding Students</h4>
+      <div class="" style="margin:0 50px">
+          <div class="row">
+            <div class="col l6 m6 s12 ">
+              <select>
+                <option value="" disabled selected>Select Department</option>
+                <option>Course 1</option>
+                <option>Course 2</option>
+                </select>
+              </div>
+            <div class="col l6 m6 s12 ">
+              <select>
+                <option value="" disabled selected>Select Semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                </select>
+              </div>
+              <div class="input-field col l6 m6 s12">
+                <input id="start" type="number" class="validate">
+                <label for="star">Start Roll No.</label>
+                </div>
+              <div class="input-field col l6 m6 s12">
+                <input id="end" type="number" class="validate">
+                <label for="end">End Roll No.</label>
+                </div>
+              <div class="input-field col l12 m12 s12">
+                <input id="except" type="text" class="validate">
+                <label for="except">Exceptions </label>
+                </div>
+              <div class="input-field col l12 m12 s12">
+                <blockquote>Add multiple students by entering range of roll no.</blockquote>
+                <blockquote>For any expcetions enter them separated by comma</blockquote>
+                </div>
+              </div>
+        </div>
+      </div>
+    <div class="modal-footer purple ">
+      <a href="#" class="waves-effect white-text waves-pink btn-flat modal-action modal-close" >Submit</a>
+      </div>
+    </div>
+
+
+
+</body>
+</html>

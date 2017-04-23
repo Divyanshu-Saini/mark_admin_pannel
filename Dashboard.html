@@ -1,0 +1,372 @@
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize - Copy.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/Page2.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/report.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="tick-16x16.png">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+    function show2(x) {
+        $("#lec" + x).removeClass("uk-fade-right", "normal");
+        $("#lec" + x).removeClass("uk-fade-left", "normal");
+        $("#lec" + x).show();
+    }
+
+    function Present(y) {
+    	console.log("In Present method "+y);
+        $("#lec" + y).addClass("uk-fade-right", "normal");
+        $("#lec" + y).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).hide();
+        });
+    }
+
+    function Absent(z) {
+        $("#lec" + z).addClass("uk-fade-left", "normal");
+        $("#lec" + z).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).hide();
+        });
+    }
+    $(function() {
+        $("#Progress").click(function() {
+            $('.report').each(function() {
+                var $this = $(this);
+                var $img = $this.find(".card-image");
+                var newHeight = $this.find(".card-num").text();
+                $img.animate({
+                    height: newHeight + '%'
+                }, 100);
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('.modal-trigger').leanModal();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="row purple" style="margin-bottom:105px;">
+        <nav>
+            <div class="row1">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li class="hide-on-small-and-down"><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li class="hide-on-small-and-down"><a href="teachers.html">Teachers</a></li>
+                    <li class="hide-on-small-and-down"><a href="class.html">Classes</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="hi-icon-wrap hi-icon-effect-6">
+                        <i class="hi-icon hi-icon-cog"></i>
+                    </li>
+                    <li class="logout" onclick="location.href='Login.html'">Log Out</li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Modal Trigger -->
+        <a class="btn-floating btn-flat btn-large waves-effect waves-light pink actbtn modal-trigger" href="#modal1"><i class="mdi-content-add" ></i></a>
+        <div class="col l12 logo purple" style="padding-top: 10px;">
+            <img src="Tick.png" class="image" width=71px height=50px>
+            <mytitle>Monis</mytitle>
+            <div class="sidebar col l11 m11 s11" style="padding-top: 10px;">
+                <ul class="tabs ">
+                    <li class="tab "><a class="active" href="#test1">Lecture</a></li>
+                    <li class="tab " id="Subject"><a href="#test2">Subject </a></li>
+                    <li class="tab " id="Progress"><a href="#test3">Progress </a></li>
+                    <li class="tab "><a href="#test4">Timetable</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="test1" class="col s12">
+        <div class="container">
+            <div class="row">
+                <ul class="fadein">
+                    <li class="card col l10 offset-l1 s12 m10 offset-m1 " id="lec1">
+                        <div class="card-content ">
+                            <div class="card-title ">
+                                <span class="card-title hide-on-med-and-down">Computer Network<span class="time">7:00 - 8:00</span></span>
+                                <div class="col m12 s12 hide-on-large-only">Computer Network</div>
+                                <div class="col  m12 s12 time hide-on-large-only">7:00 - 8:00</div>
+                            </div>
+                            <span class="col l10 m10 s6">
+            <lec class="activator">Tutorial by Pratik Kanani</lec>
+            </span>
+                            <span class="col l1 m1 s3">
+            <i class="icon mdi-action-done small waves-effect waves-light" 
+              onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Present</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(1);\'>Undo<a>', 5000);Present(1)"></i>            
+            </span>
+
+          <span class="col l1 m1 s3 ">              
+            <i class="icon mdi-navigation-close small waves-effect waves-light" 
+            onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Absent</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(1);\'>Undo<a>', 5000);Absent(1)"></i>
+            </span>
+          </div>          
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title
+            <i class="mdi-navigation-close right"></i></span>
+            Here is some more information about this product that is only revealed once clicked on.
+          </div>
+        </li>  
+
+      <li class="card col l10 offset-l1 s12 m10 offset-m1 " id="lec2">
+        <div class="card-content ">
+          <div class="card-title ">
+            <span class="card-title hide-on-med-and-down">Maths<span class="time">8:00 - 9:00</span></span>
+            <div class="col m12 s12 hide-on-large-only">Maths</div>
+            <div class="col  m12 s12 time hide-on-large-only">8:00 - 9:00</div>
+          </div>          
+          <span class="col l10 m10 s6">
+            <lec class="activator">Tutorial by Manisha Keshab</lec>
+            </span>
+          <span class="col l1 m1 s3">
+            <i class="icon mdi-action-done small waves-effect waves-light" 
+              onclick="Materialize.toast('<span class=\'light-green-text\' style=\'font-weight:400;\'>Marked Present</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(2);\'>Undo<a>', 5000);Present(2)"></i>
+            </span>
+          <span class="col l1 m1 s3 ">              
+            <i class="icon mdi-navigation-close small waves-effect waves-light" 
+            onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Absent</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(2);\'>Undo<a>', 5000);Absent(2)"></i>
+            </span>
+          </div>          
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title
+            <i class="mdi-navigation-close right"></i></span>
+            Here is some more information about this product that is only revealed once clicked on.
+          </div>
+        </li>        
+
+      <li class="card col l10 offset-l1 s12 m10 offset-m1 " id="lec3">
+        <div class="card-content ">
+          <div class="card-title ">
+            <span class="card-title hide-on-med-and-down">Computer Organization & Architecture<span class="time">9:30 - 10:30</span></span>
+            <div class="col m12 s12 hide-on-large-only">Computer Organization & Architecture</div>
+            <div class="col m12 s12 time hide-on-large-only">9:30 - 10:30</div>
+          </div>          
+          <span class="col l10 m10 s6" >
+            <lec class="activator">Tutorial by Neha Katre</lec>
+            </span>
+          <span class="col l1 m1 s3">
+            <i class="icon mdi-action-done small waves-effect waves-light" 
+              onclick="Materialize.toast('<span class=\'light-green-text\' style=\'font-weight:400;\'>Marked Present</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(3);\'>Undo<a>', 5000);Present(3)"></i>
+            </span>
+          <span class="col l1 m1 s3 ">              
+            <i class="icon mdi-navigation-close small waves-effect waves-light" 
+            onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Absent</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(3);\'>Undo<a>', 5000);Absent(3)"></i>
+            </span>
+          </div>          
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title
+            <i class="mdi-navigation-close right"></i></span>
+            Here is some more information about this product that is only revealed once clicked on.
+          </div>
+        </li>
+        
+      <li class="card col l10 offset-l1 s12 m10 offset-m1 " id="lec4">
+        <div class="card-content ">
+          <div class="card-title ">
+            <span class="card-title hide-on-med-and-down">Web Programming<span class="time">10:30 - 12:30</span></span>
+            <div class="col m12 s12 hide-on-large-only">Web Programming</div>
+            <div class="col  m12 s12 time hide-on-large-only">10:30 - 12:30</div>
+          </div>          
+          <span class="col l10 m10 s6">
+            <lec class = "activator light-blue-text text-darken-4">Tutorial by Mitchel D'silva</lec>
+            </span>
+          <span class="col l1 m1 s3">
+            <i class="icon mdi-action-done small waves-effect waves-light" 
+              onclick="Materialize.toast('<span class=\'light-green-text\' style=\'font-weight:400;\'>Marked Present</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(4);\'>Undo<a>', 5000);Present(4)"></i>
+            </span>
+          <span class="col l1 m1 s3 ">              
+            <i class="icon mdi-navigation-close small waves-effect waves-light" 
+            onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Absent</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(4);\'>Undo<a>', 5000);Absent(4)"></i>
+            </span>
+          </div>          
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title
+            <i class="mdi-navigation-close right"></i></span>
+            Here is some more information about this product that is only revealed once clicked on.
+          </div>
+        </li>
+      <li class="card col l10 offset-l1 s12 m10 offset-m1 " id="lec5">
+        <div class="card-content ">
+          <div class="card-title ">
+            <span class="card-title hide-on-med-and-down">Information Theory & Coding<span class="time">12:30 - 13:30</span></span>
+            <div class="col m12 s12 hide-on-large-only">Information Theory & Coding</div>
+            <div class="col  m12 s12 time hide-on-large-only">12:30 - 13:30</div>
+          </div>          
+          <span class="col l10 m10 s6">
+            <lec class = "activator  pink-text text-darken-4">Tutorial by Stevina Dias</lec>
+            </span>
+          <span class="col l1 m1 s3">
+            <i class="icon mdi-action-done small waves-effect waves-light" 
+              onclick="Materialize.toast('<span class=\'light-green-text\' style=\'font-weight:400;\'>Marked Present</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(5);\'>Undo<a>', 5000);Present(5)"></i>
+            </span>
+          <span class="col l1 m1 s3 ">              
+            <i class="icon mdi-navigation-close small waves-effect waves-light" 
+            onclick="Materialize.toast('<span class=\'red-text\' style=\'font-weight:400;\'>Marked Absent</span><a class=\'btn-flat yellow-text\' href=\'javascript:show2(5);\'>Undo<a>', 5000);Absent(5)"></i>
+            </span>
+          </div>          
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title
+            <i class="mdi-navigation-close right"></i></span>
+            Here is some more information about this product that is only revealed once clicked on.
+          </div>
+        </li>
+
+      </ul>
+      </div>
+    </div>
+  </div>
+
+<div id="test2" class="col s12">
+  <div class="container ">
+    <div class="row">
+    <ul class="fadein">
+            <li class="card col l10 offset-l1 s12 m8 offset-m2" id="Sub1">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Automata Thoery</span>                          
+                <span class="col l10 m10 s12"><lec>Dr. Abhijit R. Joshi</lec></span>
+                <span class="lectures right hide-on-med-and-down">3 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">3 Lectures<br>&nbsp</span>
+                </div>           
+            </li>
+            <li class="card col l10 offset-l1 s12 m8 offset-m2 " id="Sub2">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Computer Organization & Architecture</span>
+                <span class="col l10 m10 s12"><lec>Anusha Vegesna, Neha Katre</lec></span>
+                <span class="lectures right hide-on-med-and-down">3 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">3 Lectures<br>&nbsp</span>                
+                </div>
+            </li>
+            <li class="card col l10 offset-l1 s12 m8 offset-m2 " id="Sub3">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Computer Network</span>
+                <span class="col l10 m10 s12"><lec>Pratik kanani, Tanaya Dipnaik</lec></span>
+                <span class="lectures right hide-on-med-and-down">4 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">4 Lectures<br>&nbsp</span>
+                </div>
+            </li>
+            <li class="card col l10 offset-l1 s12 m8 offset-m2 " id="Sub4">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Information Theory & Coding</span>
+                <span class="col l10 m10 s12"><lec>Stevina Dias</lec></span>
+                <span class="lectures right hide-on-med-and-down">4 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">4 Lectures<br>&nbsp</span>
+                </div>
+            </li>
+            <li class="card col l10 offset-l1 s12 m8 offset-m2 " id="Sub5">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Maths</span>
+                <span class="col l10 m10 s12"><lec>Manisha Keshab, S.S. Chaudri</lec></span>
+                <span class="lectures right hide-on-med-and-down">3 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">3 Lectures<br>&nbsp</span>
+                </div>
+            </li>
+            <li class="card col l10 offset-l1 s12 m8 offset-m2 " id="Sub6">
+              <div class="card-content">
+                <span class="card-title col l12 m12 s12">Web Programming</span>
+                <span class="col l10 m10 s12"><lec>Mitchel D'silva</lec></span>
+                <span class="lectures right hide-on-med-and-down">4 Lectures<br>&nbsp</span>
+                <span class="col m12 s12 lectures hide-on-large-only">4 Lectures<br>&nbsp</span>
+                </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div id="test3" class=" col s12">
+  <div class="row report-container-o ">
+    <div class="col s2 m2 l1 offset-l1 report-container " >
+      <div class="report small" >
+        <div class="card-image my-blue"></div>
+        <div class="card-content ">
+          <span class="card-title">AT</span><br>
+          <span class="card-num">67</span><br>
+          </div>
+        </div>
+      </div>
+    <div class="col s2 m2 l1 report-container">
+      <div class="report small">
+        <div class="card-image my-blue"></div>
+        <div class="card-content">
+          <span class="card-title">COA</span><br>
+          <span class="card-num">57</span><br>
+          </div>
+        </div>
+      </div>    
+    <div class="col s2 m2 l1 report-container">
+      <div class="report small">
+        <div class="card-image my-blue"></div>
+        <div class="card-content ">
+          <span class="card-title">CN</span><br>
+          <span class="card-num">27</span><br>
+          </div>
+        </div>
+      </div>
+    <div class="col s2 m2 l1 report-container">
+      <div class="report small">
+        <div class="card-image my-blue"></div>
+        <div class="card-content ">
+          <span class="card-title">ITC</span><br>
+          <span class="card-num">77</span><br>
+          </div>
+        </div>
+      </div>
+    <div class="col s2 m2 l1 report-container">
+      <div class="report small">
+        <div class="card-image my-blue"></div>
+        <div class="card-content ">
+          <span class="card-title">Maths</span><br>
+          <span class="card-num">40</span><br>
+          </div>
+        </div>
+      </div>
+    <div class="col s2 m2 l1 report-container">
+      <div class="report small">
+        <div class="card-image my-blue"></div>
+        <div class="card-content ">
+          <span class="card-title">WP</span><br>
+          <span class="card-num">80</span><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="test4" class="col s12">
+  Test 4
+  </div>
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal purple white-text">
+    <div class="modal-content">
+      <h4 style="font-weight:300">Add Subject</h4>
+      <div class="container">
+        <div class="row">
+          <div class="input-field col l11 m8 s12 ">
+            <i class="mdi-av-my-library-books prefix"></i>
+            <input id="sub1" type="text" class="validate " maxlength = 25 required autofocus>
+            <label for="sub1">TITLE</label>
+            </div>  
+          <div class="input-field col l11 m8 s12">
+            <i class="mdi-social-person prefix"></i>
+            <textarea id="note" class="materialize-textarea" required></textarea>
+            <label for="note">Add a Note!</label>
+            </div>      
+          </div>
+        </div>
+      </div>
+    <div class="modal-footer purple ">
+      <a href="#" class="waves-effect white-text waves-pink btn-flat modal-action modal-close">Submit</a>
+                        </div>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Timetable Form</title>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize - Copy.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/Page2.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="tick-16x16.png">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('select').material_select();
+        append_before();
+        ptype();
+        create_objects();create_timetable();
+    });
+    </script>
+</head>
+
+<body>
+    <div class="row purple" style="margin-bottom:105px;">
+        <nav>
+            <div class="row1">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                  <!--  <li class="hide-on-small-and-down"><a href="dashboard.html">Dashboard</a></li>-->
+                    <li class="hide-on-small-and-down"><a href="teachers.html">Teachers</a></li>
+                    <li class="hide-on-small-and-down"><a href="class.html">Classes</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="hi-icon-wrap hi-icon-effect-6">
+                        <batch class="hi-icon hi-icon-cog"></batch>
+                    </li>
+                    <li class="logout" onclick="location.href='sign_in.html'">Log Out</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="col l12 logo purple" style="padding-top: 10px;">
+            <img src="Tick.png" class="image" width="71px">
+            <mytitle>Timetable</mytitle>
+            <br>&nbsp
+            <br>&nbsp
+        </div>
+    </div>
+    <div class="container my-container">
+        <div class="card z-depth-2 ">
+            <div class="card-content">
+                <h4 class="header pink-text">&nbsp&nbsp&nbsp&nbspAdding Timetable</h4>
+                <div class="container my-container">
+                    <form id="form-id" action="Insert_tt.php" method="post">
+                        <div class="row">
+                            <div class="section">
+                                <div class=" input-field col l12 m12 s12">
+                                    <input id="t_name" type="text" name="te_name" class="validate">
+                                    <label for="t_name">Teacher Name</label>
+                                </div>
+                                <div class=" input-field col l12 m12 s12">
+                                    <input id ="tec_n" type="text" name="sub" class="validate">
+                                    <label for="tec_n">Subject</label>
+                                </div>
+                                <div class=" input-field col l12 m12 s12">
+                                  <select name="day">
+                                      <option value="" disabled selected>Select Day</option>
+                                      <option value="Monday">Monday</option>
+                                      <option value="Tuesday">Tuesday</option>
+                                      <option value="Wednesday">Wednesday</option>
+                                      <option value="Thrusday">Thrusday</option>
+                                      <option value="Friday">Friday</option>
+                                      <option value="Saturday">Saturday</option>
+                                  </select>
+                                </div>
+                                <div class="input-field col l12 m12 s12">
+                                    <input id="cl_i" type="text" name="cl_id" class="validate">
+                                    <label for="cl_i">Class Id</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="start" type="time" name="st_time" class="validate">
+                                    <label for="start" class="time-label">Start time.</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="end" type="time" name="ed_time" class="validate">
+                                    <label for="end" class="time-label">End Time.</label>
+                                </div>
+                                <div class="input-field col l12 m12 s12">
+                                  <input id="ty" type="text" name="type" placeholder="Enter 1 for pratical and 0 for lectures">
+                                  <label for="ty">Practicals/Lectures</label>
+                                </div>
+
+                            <div class="col l3 m3 s3 offset-l6 offset-m6">
+                                <button type="submit" id="create-timetable"  class="waves-effect white-text pink waves-light btn-flat z-index-0 " >Generate</button>
+                            </div>
+                        </div>
+                         </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="timetable"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script type="text/javascript" src="js/timetable.js"></script>
+</body>
+
+</html>
+<!--
+<div class="section">
+    <div class="row">
+        <h5>New Period</h5>
+        <br>
+        <div class="col l2 m2 s4">
+            <input name="day" type="checkbox" id="mon" />
+            <label for="mon">Mon</label>
+        </div>
+        <div class="col l2 m2 s4">
+            <input name="day" type="checkbox" id="tue" />
+            <label for="tue">Tue</label>
+        </div>
+        <div class="col l2 m2 s4 ">
+            <input name="day" type="checkbox" id="wed" />
+            <label for="wed">Wed</label>
+        </div>
+        <div class="col l2 m2 s4 ">
+            <input name="day" type="checkbox" id="thur" />
+            <label for="thur">Thu</label>
+        </div>
+        <div class="col l2 m2 s4 ">
+            <input name="day" type="checkbox" id="fri" />
+            <label for="fri">Fri</label>
+        </div>
+        <div class="col l2 m2 s4 ">
+            <input name="day" type="checkbox" id="sat" />
+            <label for="sat">Sat</label>
+        </div>
+        <div class="input-field col l6 m6 s12">
+            <input id="start" type="time" class="validate">
+            <label for="start" class="time-label">Start time.</label>
+        </div>
+        <div class="input-field col l6 m6 s12">
+            <input id="end" type="time" class="validate">
+            <label for="end" class="time-label">End Time.</label>
+        </div>
+    </div>
+    <div class="row" id="ptype-1">
+        <div class="col l4 m2 s4">
+            <input name="ptype-1" type="radio" id="radio-lec-1" value="lec" />
+            <label for="radio-lec-1">Lecture</label>
+        </div>
+        <div class="col l4 m2 s4">
+            <input name="ptype-1" type="radio" id="radio-prac_tut-1" value="prac_tut" />
+            <label for="radio-prac_tut-1">Practical/Tutorial</label>
+        </div>
+    </div>
+    <div class="row" id="lec-1">
+        <div class="col l6 m4 s12 ">
+            <select id="lec-1-sub">
+                <option value="" disabled selected>Select Subject *</option>
+                <option>Subject 1</option>
+                <option>Subject 2</option>
+            </select>
+        </div>
+    </div>
+    <div class="row " id="prac-1">
+        <div id="prac-1-batch-1">
+            <div class="col l5 m4 s12 ">
+                <select id="prac-1-batch-1-sub">
+                    <option value="" disabled selected>Select Subject *</option>
+                    <option>Subject 1</option>
+                    <option>Subject 2</option>
+                </select>
+            </div>
+            <div class="input-field col l2 m4 s12">
+                <p class="padding-l6 grey-text">Batch 1</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div> -->
+<!--
+<div class="row" id="prac-1-batch-1">
+    <div class="col l5">
+        <div class="select-wrapper prac_tut"><batch class="mdi-navigation-arrow-drop-down active"></batch>
+            <input type="text" class="select-dropdown" readonly="true" data-activates="select-options-50fd408e-a74c-bc6a-1f92-b092d36b4a8d" value="Select Subject">
+            <ul id="select-options-50fd408e-a74c-bc6a-1f92-b092d36b4a8d" class="dropdown-content select-dropdown" style="width: 214px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
+                <li class="disabled active"><span>Select Subject</span></li>
+                <li class=""><span>Subject 1</span></li>
+                <li class=""><span>Subject 2</span></li>
+            </ul>
+            <select id="prac-1-batch-1-sub-" class="prac_tut initialized">
+                <option disabled="" selected="" value="">Select Subject</option>
+                <option value="sub1">Subject 1</option>
+                <option value="sub2">Subject 2</option>
+            </select>
+        </div>
+    </div>
+    <div class="col l5 prac-teach">
+        <div class="select-wrapper"><batch class="mdi-navigation-arrow-drop-down"></batch>
+            <input type="text" class="select-dropdown" readonly="true" data-activates="select-options-d0c04702-484a-5f55-4869-ed581fbb05a6" value="Select Teacher">
+            <ul id="select-options-d0c04702-484a-5f55-4869-ed581fbb05a6" class="dropdown-content select-dropdown">
+                <li class="disabled"><span>Select Teacher</span></li>
+                <li class=""><span>Teacher 1</span></li>
+                <li class=""><span>Teacher 2</span></li>
+            </ul>
+            <select id="prac-1-teach-1" class="initialized">
+                <option disabled="" selected="" value="">Select Teacher</option>
+                <option value="teach1">Teacher 1</option>
+                <option value="teach2">Teacher 2</option>
+            </select>
+        </div>
+    </div>
+    <div class="input-field col l2 m4 s12">
+        <p class="padding-l6 grey-text">Batch 1</p>
+    </div>
+</div>
+ -->
+<!--
+[ { "start": "02:01",
+    "end": "16:58",
+    "day": "tue",
+    "type": "prac_tut",
+    "sub": "sub1/sub2/sub2/sub2",
+    "teach": "undefined/null/teach1/teach2" },
+  { "start": "02:01",
+    "end": "16:58",
+    "day": "wed",
+    "type": "prac_tut",
+    "sub": "sub1/sub2/sub2/sub2",
+    "teach": "undefined/null/teach1/teach2" } ] --><!--
+<div class="container">
+        <table class="centered bordered hoverable white"  >
+            <thead>
+                <tr>
+                    <th data-field="id"><i class="mdi-device-access-time medium"></i></th>
+                    <th data-field="name">MONDAY</th>
+                    <th data-field="price">TUESDAY</th>
+                    <th data-field="name">WEDNESDAY</th>
+                    <th data-field="price">THURSDAY</th>
+                    <th data-field="name">FRIDAY</th>
+                    <th data-field="price">SATURDAY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7:00-8:00</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td>8:00-9:00</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>9:30-10:30</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
